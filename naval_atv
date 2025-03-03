@@ -1,0 +1,119 @@
+#include <stdio.h>
+
+int main(){
+    int matriz [10] [10] = { {0} };
+//horizontal
+    matriz [4] [0] = 3;
+    matriz [4] [1] = 3;
+    matriz [4] [2] = 3;
+//vertical
+    matriz [7] [5] = 3;
+    matriz [8] [5] = 3;
+    matriz [9] [5] = 3;
+//diagonal
+    matriz [1] [1] = 3;
+    matriz [2] [2] = 3;
+    matriz [3] [3] = 3;
+
+    matriz [9] [9] = 3;
+    matriz [8] [8] = 3;
+    matriz [7] [7] = 3;
+
+//cruz
+    matriz [3] [5] = 1;
+
+    matriz [4] [3] = 1;
+    matriz [4] [4] = 1;
+    matriz [4] [5] = 1;
+    matriz [4] [6] = 1;
+    matriz [4] [7] = 1;
+
+    matriz [5] [5] = 1;
+
+//cone
+
+matriz [9] [0] = 1;
+matriz [9] [1] = 1;
+matriz [9] [2] = 1;
+matriz [9] [3] = 1;
+matriz [9] [4] = 1;
+
+matriz [8] [1] = 1;
+matriz [8] [2] = 1;
+matriz [8] [3] = 1;
+
+matriz [7] [2] = 1;
+
+//octaedro
+matriz [1] [8] = 1;
+
+matriz [2] [7] = 1;
+matriz [2] [8] = 1;
+matriz [2] [9] = 1;
+
+matriz [3] [8] = 1;
+
+//estrutura de repeticao da tabela 10x10
+    for(int i = 0; i < 10; i++){
+        for( int j = 0; j < 10; j++){
+            printf(" %d",matriz [i] [j]);
+        }
+        printf("\n");
+    }
+
+//estrutura criada para interagir com o usuario
+    int coluna;
+    printf("digite a coluna - vertical:\n");
+    scanf("%d", &coluna);
+
+    if(matriz [4][coluna]){
+        printf("procure o navio(vertical):\n");
+        scanf("%d", &matriz);
+        printf("voce acertou navio\n");
+    }else {
+        printf("voce acertou agua\n");
+    }
+
+    printf("digite a coluna - horizontal:\n");
+    scanf("%d", &coluna);
+
+    if(matriz [6][coluna]){
+        printf("procure o navio(horizontal):\n");
+        scanf("%d", &matriz);
+        printf("voce acertou navio\n");
+    }else{
+        printf("voce acertou agua\n");
+    }
+
+    printf("digite a coluna - horizontal:\n");
+    scanf("%d", &coluna);
+
+    if(matriz [7, 8, 6][coluna]){
+        printf("procure o navio(vertical):\n");
+        scanf("%d", &matriz);
+        printf("voce acertou octaedro\n");
+    }else {
+        printf("voce acertou agua\n");
+    }
+
+    printf("digite a coluna - horizontal:\n");
+    scanf("%d", &coluna);
+
+    if(matriz [9, 8, 7][coluna]){
+        printf("procure o navio(horizontal):\n");
+        scanf("%d", &matriz);
+        printf("voce acertou cone\n");
+    }else{
+        printf("voce acertou agua\n");
+    }
+
+    printf("digite a coluna - horizontal:\n");
+    scanf("%d", &coluna);
+
+    if(matriz [0, 1, 2, 3][coluna]){
+        printf("procure o navio(horizontal):\n");
+        scanf("%d", &matriz);
+        printf("voce acertou cruz\n");
+    return 0;
+    }
+}
